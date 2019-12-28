@@ -14,7 +14,7 @@ after_success:
     - docker build -t bitstolearn/multi-nginx ./nginx
     - docker build -t bitstolearn/multi-server ./server
     - docker build -t bitstolearn/multi-worker ./worker
-    - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     - docker push bitstolearn/multi-client
     - docker push bitstolearn/multi-nginx
     - docker push bitstolearn/multi-server
